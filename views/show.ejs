@@ -1,0 +1,15 @@
+<h1>Movie detail for imdbID number: <b><%= imdbID %></b></h1>
+
+<p>Title: <b><%= data.Title %></b></p>
+<p>Year: <b><%= data.Year %></b></p>
+<p>Plot: <b><%= data.Plot %></b></p>
+<p>Image: <img src="<%= data.Poster %>"></p>
+
+
+<form action="/favorites" method="POST">
+	<input type="hidden" name="imdbID" value="<%= imdbID %>" />
+	<input type="hidden" name="title" value="<%= data.Title %>" />
+	<input type="hidden" name="year" value="<%= data.Year %>" />
+	<input type="hidden" name="poster" value="<%= data.Poster %>" />
+	<button type="submit" class="btn btn-primary">Add to favorites</button>
+</form>

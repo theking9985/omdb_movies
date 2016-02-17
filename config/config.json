@@ -1,0 +1,17 @@
+{
+  "development": {    
+    "database": "omdb_movies",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "test": {    
+    "database": "omdb_movies",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "database": "omdb_movies",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  }
+}

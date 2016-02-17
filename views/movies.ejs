@@ -1,0 +1,9 @@
+<h1>All search results for <b><%= searchTerm %></b></h1>
+
+<% data.Search.forEach(function(data) { %>
+	<a href="/show/<%= data.imdbID %>">
+		<div class="well">
+			<p>Title: <b><%= data.Title %></p>
+		</div>
+	</b>
+<% }); %>

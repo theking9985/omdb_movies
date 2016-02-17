@@ -1,0 +1,11 @@
+<h1>All movies for <%= tag[0].tag %></h1>
+
+<% tag[0].favorites.forEach(function(favorite) { %>
+	<div class="well">
+		<p>Title: <%= favorite.title %></p>
+	</div>
+<% }); %>
+
+<br>
+
+<a href="javascript:history.back()" class="btn btn-primary">Back</a>

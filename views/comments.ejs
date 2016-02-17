@@ -1,0 +1,19 @@
+<h1>All comments for <b><%= favorites.title %></b></h1>
+
+<% favorites.comments.forEach(function(comment) { %>
+	<div class="well">
+		<p>Text: <%= comment.text %></p>
+		<p>Author: <%= comment.author %></p>
+		<p>FavoriteId: <%= comment.favoriteId %></p>
+	</div>
+<% }); %>
+
+<form action="/comments/<%= favorites.id %>" method="POST">
+	<label>New comment</label>
+	<br>
+	<input type="text" name="text" placeholder="Text" />
+	<input type="text" name="author" placeholder="Author" />
+	<br>
+	<button class="btn btn-primary">Submit</button>
+</form>
+

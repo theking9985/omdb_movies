@@ -1,0 +1,20 @@
+<h1>Tags Page</h1>
+
+<h3>All tags for <%= favorite.title %></h3>
+<% favorite.tags.forEach(function(tag) { %>
+	<a href="/tags/showtags/<%= tag.id %>">
+		<%= tag.tag %>
+	</a>
+	<br>
+<% }); %>
+
+<br>
+<hr>
+
+<div id="tagWell" class="well">
+	<form action="/tags/<%= favorite.id %>" method="POST">
+		<label>Type in new tag</label>
+		<input type="text" name="tag" placeholder="Type some tag" />
+		<button class="btn btn-primary">Submit</button>
+	</form>
+</div>

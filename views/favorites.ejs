@@ -1,0 +1,23 @@
+<h1>All favorites movies</h1>
+
+<% rows.forEach(function(row) { %>
+	<div class="well">
+		<a href="/show/<%= row.imdbID %>">
+			<p>Title: <%= row.title %></p>
+			<p>Year: <%= row.year %></p>
+			<p>imdbID: <%= row.imdbID %></p>
+			<img src="<%= row.poster %>" />
+			<a href="/comments/<%= row.id %>" class="btn btn-primary">Comment</a>
+
+			<a href="/tags/<%= row.id %>" class="btn btn-primary">Tag</a>
+		</a>
+		<p>
+			Tags: <% row.tags.forEach(function(tag) { %>
+				<a href="/tags/showtags/<%= tag.id %>"><%= tag.tag %></a>
+			<% }) %>
+
+		</p>
+	</div>
+<% }); %>
+
+<a href="javascript:history.back()"><button type="button" class="btn btn-lg btn-info">Back</button></a>
