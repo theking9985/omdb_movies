@@ -28,4 +28,48 @@ router.post("/", function(req, res) {
 	})	
 });
 
+//edit form
+router.get("/:id/editForm", function(req, res) {
+	var id = req.params.id;
+	res.render("editFavorite", {id});
+});
+
+//edit route
+router.post("/:id/edit", function(req, res) {
+	var id = req.params.id;
+	console.log(id);
+	db.favorite.find({
+		where: {
+			id: id
+		}
+	}).then(function(favorite) {
+		console.log("***********");
+		console.log(req.body.title);
+		favorite.updateAttributes({
+			title: req.body.title
+		}).then(function() {
+			res.redirect("/favorites");
+		});
+	});
+});
+
+router.get("/:id/delete", function(req, res) {
+	var id = req.params.id;
+	db.favorite.destroy({
+		where: {
+			id: id
+		}
+	}).then(function() {
+		res.redirect("/favorites")
+	})
+});
+
 module.exports = router;
+
+
+
+
+
+
+
+

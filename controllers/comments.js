@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require("../models");
 
 
-// // this also works but need to change ejs if use this one
+// this also works but need to change ejs if use this one
 // router.get("/:id", function(req, res) {
 // 	var id = req.params.id;
 // 	db.favorite.find({
@@ -11,7 +11,7 @@ var db = require("../models");
 // 	}).then(function(favorite) {
 // 		favorite.getComments()
 // 		.then(function(comments) {
-// 			res.render("comments", {favorite, comments});
+// 			res.render("comments", {favorite, comments});			
 // 		})
 // 	})
 // });
@@ -24,7 +24,6 @@ router.get("/:id", function(req, res) {
 		},
 		include: [db.comment]
 	}).then(function(favorites){
-		// res.send(favorites);
 		res.render("comments", {favorites});
 	})
 });
@@ -39,5 +38,16 @@ router.post("/:id", function(req, res) {
 });
 
 
-
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+

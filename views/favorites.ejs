@@ -7,17 +7,22 @@
 			<p>Year: <%= row.year %></p>
 			<p>imdbID: <%= row.imdbID %></p>
 			<img src="<%= row.poster %>" />
-			<a href="/comments/<%= row.id %>" class="btn btn-primary">Comment</a>
-
-			<a href="/tags/<%= row.id %>" class="btn btn-primary">Tag</a>
 		</a>
+		
+		<p>
+			<a href="/comments/<%= row.id %>" class="btn btn-primary">Comment</a>
+			<a href="/tags/<%= row.id %>" class="btn btn-primary">Tag</a>
+			<a href="/favorites/<%= row.id %>/editForm" class="btn btn-primary">Edit</a>
+			<a href="/favorites/<%= row.id %>/delete" class="deleteLink btn btn-primary">Delete</a>
+		</p>
+
 		<p>
 			Tags: <% row.tags.forEach(function(tag) { %>
 				<a href="/tags/showtags/<%= tag.id %>"><%= tag.tag %></a>
 			<% }) %>
-
 		</p>
 	</div>
 <% }); %>
 
 <a href="javascript:history.back()"><button type="button" class="btn btn-lg btn-info">Back</button></a>
+
